@@ -41,8 +41,8 @@ EOF
 
 # prepare daemon0 and daemon1 conf and operators
 mkdir -p $TMPDIR/daemon0/operators $TMPDIR/daemon1/operators
-cp -r sakura/operators/public/datasample $TMPDIR/daemon0/operators
-cp -r sakura/operators/public/mean $TMPDIR/daemon1/operators
+cp -r sakura/operators/public/datasample sakura/operators/public/csvimport $TMPDIR/daemon0/operators
+cp -r sakura/operators/public/mean sakura/operators/public/markercluster $TMPDIR/daemon1/operators
 for i in 0 1
 do
     cat > $TMPDIR/daemon$i/daemon.conf << EOF
@@ -58,7 +58,7 @@ done
 
 # run the commands in the background and prefix their
 # output.
-prefix_out HUB ./hub.py -f $TMPDIR/hub/hub.conf workflow &
+prefix_out HUB ./hub.py -f $TMPDIR/hub/hub.conf guitest &
 sleep 1
 for i in 0 1
 do
