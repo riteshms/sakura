@@ -5,8 +5,8 @@ sakura = {
 // debugging
 // ---------
 // uncomment / comment to activate debug
-//sakura.common.debug = function (s) { console.log(s); };
-sakura.common.debug = function (s) { };
+sakura.common.debug = function (s) { console.log(s); };
+//sakura.common.debug = function (s) { };
 
 
 // document ready state management
